@@ -2,6 +2,10 @@ package edu.eci.arep.sparkwebapp;
 import spark.Request;
 import spark.Response;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static spark.Spark.*;
 
 /**
@@ -20,14 +24,13 @@ public class SparkWebApp {
         return "<!DOCTYPE html>"
         + "<html>"
         + "<body>"
-        + "<h2>HTML Forms</h2>"
+        + "<h2>LABORATORY 2 AREP 2020-2</h2>"
+        + "<p> Insert a set of numbers separated by a <br> " +
+                "comma and we will calculate the mean and standard deviation </p>"
         + "<form action=\"/results\">"
-        + "  First name:<br>"
-        + "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">"
+        + "  Data set:<br>"
+        + "  <input name=\"data\" >"
         + "  <br>"
-        + "  Last name:<br>"
-        + "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">"
-        + "  <br><br>"
         + "  <input type=\"submit\" value=\"Submit\">"
         + "</form>"
         + "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/results\".</p>"
@@ -36,8 +39,23 @@ public class SparkWebApp {
     }
 
     private static String resultsPage(Request req, Response res) {
-        return req.queryParams("firstname") + " " +
-                req.queryParams("lastname");
+
+        LinkedList<Double> linkedList = new LinkedList<Double>();
+        Calculator calculator = new Calculator();
+        String [] data = req.queryParams("data").split(",");
+        for (String datum : data) {
+            linkedList.addNodeRight(Double.parseDouble(datum));
+        }
+        double mean = calculator.calcMean(linkedList);
+        double sd = calculator.calcStandardDeviation(linkedList);
+        return "<!DOCTYPE html>"
+                + " <html>" +
+                "<body>" +
+                "<h2>The Mean for the inserted data set  is: "+ mean + "</h2>" +
+                "<h2>The Standard Deviation inserted data set is: "+ sd + "</h2>"+
+                "</body>" +
+                "</html>";
+
     }
 
     /**

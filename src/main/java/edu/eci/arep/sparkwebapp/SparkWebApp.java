@@ -1,10 +1,11 @@
 package edu.eci.arep.sparkwebapp;
+import static spark.Spark.*;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class SparkWebApp
 {
     public static void main( String[] args )
     {

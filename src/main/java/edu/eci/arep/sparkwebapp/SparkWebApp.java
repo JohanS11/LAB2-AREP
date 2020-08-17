@@ -36,6 +36,11 @@ public class SparkWebApp {
         + "</html>";
     }
 
+    /**
+     * @param req
+     * @param res
+     * @return
+     */
     private static String resultsPage(Request req, Response res) {
 
         LinkedList<Double> linkedList = new LinkedList<Double>();

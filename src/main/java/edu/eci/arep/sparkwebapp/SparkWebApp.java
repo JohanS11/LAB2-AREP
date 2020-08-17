@@ -2,9 +2,7 @@ package edu.eci.arep.sparkwebapp;
 import spark.Request;
 import spark.Response;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static spark.Spark.*;
 
@@ -51,8 +49,13 @@ public class SparkWebApp {
         return "<!DOCTYPE html>"
                 + " <html>" +
                 "<body>" +
-                "<h2>The Mean for the inserted data set  is: "+ mean + "</h2>" +
-                "<h2>The Standard Deviation inserted data set is: "+ sd + "</h2>"+
+                "<h2>The Mean for the inserted data set  is: "+
+                    "<p>" + mean + "</p>" +
+                "</h2>" +
+                "<h2>The Standard Deviation inserted data set is: "+
+                    "<p>" + sd + "</p>" +
+                "</h2>" +
+                "<h3>Data set: " + Arrays.toString(data) + "</h3>" +
                 "</body>" +
                 "</html>";
 

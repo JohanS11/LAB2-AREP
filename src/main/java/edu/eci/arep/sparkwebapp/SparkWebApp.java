@@ -60,7 +60,7 @@ public class SparkWebApp {
                 "<h2>The Standard Deviation inserted data set is: "+
                     "<p>" + sd + "</p>" +
                 "</h2>" +
-                "<h3>Data set: " + Arrays.toString(data) + "</h3>" +
+                "<h2>Data set: " + Arrays.toString(data) + "</h2>" +
                 "</body>" +
                 "</html>";
 

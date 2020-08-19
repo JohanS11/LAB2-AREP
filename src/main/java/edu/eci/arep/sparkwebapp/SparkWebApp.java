@@ -7,8 +7,8 @@ import java.util.Arrays;
 import static spark.Spark.*;
 
 /**
- * Hello world!
- *
+ * This is a simple WebApplication deployed in Heroku using SparkWeb.
+ * @author Johan Arias
  */
 
 public class SparkWebApp {
@@ -18,6 +18,15 @@ public class SparkWebApp {
         get("/inputdata", (req, res) -> inputDataPage(req, res));
         get("/results", (req, res) -> resultsPage(req, res));
     }
+
+    /**
+     * @param req This is the object that represents the HTTP request
+     *            in order to retrieve a resource from the web server.
+     * @param res This is the object that represents the HTTP response
+     *            given by the webserver
+     * @return A string with html code that will build the web page, in this case
+     *          the resource located at /inputdata
+     */
     private static String inputDataPage(Request req, Response res) {
         return "<!DOCTYPE html>"
         + "<html>"
@@ -37,9 +46,14 @@ public class SparkWebApp {
     }
 
     /**
-     * @param req
-     * @param res
-     * @return
+     * This method retrieves a data set from a parameter from the resource "inputdata"
+     * called data and builds the webpage based on this set.
+     * @param req This is the object that represents the HTTP request
+     *             in order to retrieve a resource from the web server.
+     * @param res This is the object that represents the HTTP response
+     *      *            given by the webserver
+     * @return A string with html code that will build the web page, in this case
+     *      *          the resource located at /results
      */
     private static String resultsPage(Request req, Response res) {
 

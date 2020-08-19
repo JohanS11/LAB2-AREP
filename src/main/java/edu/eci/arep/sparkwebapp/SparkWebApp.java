@@ -3,6 +3,7 @@ import spark.Request;
 import spark.Response;
 
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 import static spark.Spark.*;
 
@@ -36,7 +37,7 @@ public class SparkWebApp {
                 "comma and we will calculate the mean and standard deviation </p>"
         + "<form action=\"/results\">"
         + "  Data set:<br>"
-        + "  <input name=\"data\" >"
+        + "  <input type=\"text\" name=\"data\" >"
         + "  <br>"
         + "  <input type=\"submit\" value=\"Submit\">"
         + "</form>"
@@ -59,6 +60,9 @@ public class SparkWebApp {
 
         LinkedList<Double> linkedList = new LinkedList<Double>();
         Calculator calculator = new Calculator();
+        if (!Pattern.matches("^[0-9,.]*$",req.queryParams("data"))){
+            return "Insert numbers separated by comma!";
+        }
         String [] data = req.queryParams("data").split(",");
         for (String datum : data) {
             linkedList.addNodeRight(Double.parseDouble(datum));
@@ -77,7 +81,6 @@ public class SparkWebApp {
                 "<h2>Data set: " + Arrays.toString(data) + "</h2>" +
                 "</body>" +
                 "</html>";
-
     }
 
     /**

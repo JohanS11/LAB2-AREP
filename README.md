@@ -44,6 +44,8 @@
 
    ### Executing tests
    
+     `mvn test`
+   
      In order to run the tests developed with JUnit you have run the follow command:
      
      ### Tests coverage

@@ -11,7 +11,7 @@
 
   This is the intended design for this project
   
-  ![uml](DesignDiagram/appDesign.png)
+  ![uml](img/uml.png)
   
 
 ## User's guide
@@ -34,7 +34,7 @@
 
 2. **Build the project with maven:**
   
-    `cd Taller1Arep && mvn package`
+    `cd LAB2-AREP && mvn package`
 
 3. **Execute the project with maven:**
 
@@ -55,7 +55,17 @@
    - Apache Maven 3.6.3
    - Java 1.8.0_211
    - Git 2.26.2
+   
+  ## POC Heroku App 
+  
+  ![poc1](img/poc1.png)
+  
+  ![poc2](img/poc2.png)
     
+   In case that you try interesting things (;
+   
+  ![poc3](img/poc3.png)
+  
   ## Java Documentation
   
   In order to get additional information about this project you can use JavaDoc to get the Documentation.
@@ -67,4 +77,4 @@
   
   ## License
   
-  This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](https://github.com/JohanS11/Taller1Arep/blob/master/LICENSE) file for more details.
+  This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](https://github.com/JohanS11/LAB2-AREP/blob/master/LICENSE) file for more details.

@@ -13,6 +13,8 @@
   
   ![uml](img/uml.png)
   
+  ![comp](img/comp.png)
+  
 
 ## User's guide
 
@@ -41,6 +43,10 @@
     `mvn exec:java -Dexec.mainClass="edu.eci.arep.sparkwebapp.SparkWebApp" `
     
     now you can navigate trough your brower at http://localhost:4567/inputdata
+    
+   ### Architecture Description
+   
+   You can find the architecture description of this project at [Architecture Description](https://github.com/JohanS11/LAB2-AREP/blob/master/Architecture%20Description.pdf)
 
    ### Executing tests
    

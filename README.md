@@ -60,7 +60,7 @@
      
   ## This project was built with:
   
-   - Apache Maven 3.6.3 (Dependencys)
+   - Apache Maven 3.6.3 
    - Java 1.8.0_211
    - Git 2.26.2
    
